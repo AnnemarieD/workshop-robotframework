@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190114 14:14:35.972" generator="Robot 3.1.1 (Python 2.7.15 on darwin)">
+<suite source="/Users/adoran/Projects/Robot Framework/test.robot" id="s1" name="Test">
+<test id="s1-t1" name="Valid Login">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:36.102" level="INFO">Opening browser 'Chrome' to base url 'http://www.saucedemo.com'.</msg>
+<status status="PASS" endtime="20190114 14:14:38.774" starttime="20190114 14:14:36.101"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:38.774" starttime="20190114 14:14:36.101"></status>
+</kw>
+<kw name="Input Username">
+<arguments>
+<arg>standard_user</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:user-name</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20190114 14:14:38.777" level="INFO">${element} = id:user-name</msg>
+<status status="PASS" endtime="20190114 14:14:38.777" starttime="20190114 14:14:38.777"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:38.815" starttime="20190114 14:14:38.778"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:38.815" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<status status="PASS" endtime="20190114 14:14:38.957" starttime="20190114 14:14:38.815"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:38.958" starttime="20190114 14:14:38.775"></status>
+</kw>
+<kw name="Input Password">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:password</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20190114 14:14:38.958" level="INFO">${element} = id:password</msg>
+<status status="PASS" endtime="20190114 14:14:38.958" starttime="20190114 14:14:38.958"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:38.986" starttime="20190114 14:14:38.959"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:38.987" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20190114 14:14:39.091" starttime="20190114 14:14:38.986"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:39.091" starttime="20190114 14:14:38.958"></status>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>class:login-button</arg>
+</arguments>
+<msg timestamp="20190114 14:14:39.092" level="INFO">Clicking button 'class:login-button'.</msg>
+<status status="PASS" endtime="20190114 14:14:39.469" starttime="20190114 14:14:39.092"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:39.469" starttime="20190114 14:14:39.091"></status>
+</kw>
+<kw name="Product Page Should Be Open">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>class:product_label</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20190114 14:14:39.471" level="INFO">${element} = class:product_label</msg>
+<status status="PASS" endtime="20190114 14:14:39.471" starttime="20190114 14:14:39.471"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:39.515" starttime="20190114 14:14:39.472"></status>
+</kw>
+<kw name="Variable Should Exist" library="BuiltIn">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:39.516" starttime="20190114 14:14:39.516"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:39.517" starttime="20190114 14:14:39.470"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190114 14:14:39.659" starttime="20190114 14:14:39.518"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:39.659" critical="yes" starttime="20190114 14:14:36.100"></status>
+</test>
+<test id="s1-t2" name="Invalid Login">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:39.663" level="INFO">Opening browser 'Chrome' to base url 'http://www.saucedemo.com'.</msg>
+<status status="PASS" endtime="20190114 14:14:42.481" starttime="20190114 14:14:39.662"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:42.482" starttime="20190114 14:14:39.662"></status>
+</kw>
+<kw name="Input Username">
+<arguments>
+<arg>locked_out_user</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:user-name</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20190114 14:14:42.488" level="INFO">${element} = id:user-name</msg>
+<status status="PASS" endtime="20190114 14:14:42.488" starttime="20190114 14:14:42.484"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:42.527" starttime="20190114 14:14:42.488"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:42.528" level="INFO">Typing text 'locked_out_user' into text field 'id:user-name'.</msg>
+<status status="PASS" endtime="20190114 14:14:42.683" starttime="20190114 14:14:42.527"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:42.683" starttime="20190114 14:14:42.482"></status>
+</kw>
+<kw name="Input Password">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:password</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20190114 14:14:42.684" level="INFO">${element} = id:password</msg>
+<status status="PASS" endtime="20190114 14:14:42.684" starttime="20190114 14:14:42.684"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:42.717" starttime="20190114 14:14:42.685"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:42.717" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20190114 14:14:42.831" starttime="20190114 14:14:42.717"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:42.831" starttime="20190114 14:14:42.684"></status>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>class:login-button</arg>
+</arguments>
+<msg timestamp="20190114 14:14:42.832" level="INFO">Clicking button 'class:login-button'.</msg>
+<status status="PASS" endtime="20190114 14:14:42.903" starttime="20190114 14:14:42.832"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:42.904" starttime="20190114 14:14:42.832"></status>
+</kw>
+<kw name="Locked Out Error Should Be Displayed">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>class:error-button</arg>
+</arguments>
+<assign>
+<var>${errorButton}</var>
+</assign>
+<msg timestamp="20190114 14:14:42.905" level="INFO">${errorButton} = class:error-button</msg>
+<status status="PASS" endtime="20190114 14:14:42.905" starttime="20190114 14:14:42.905"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${errorButton}</arg>
+</arguments>
+<status status="PASS" endtime="20190114 14:14:42.950" starttime="20190114 14:14:42.906"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${errorButton}</arg>
+</arguments>
+<msg timestamp="20190114 14:14:42.966" level="INFO">Element 'class:error-button' is displayed.</msg>
+<status status="PASS" endtime="20190114 14:14:42.966" starttime="20190114 14:14:42.950"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:42.967" starttime="20190114 14:14:42.904"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190114 14:14:43.091" starttime="20190114 14:14:42.967"></status>
+</kw>
+<status status="PASS" endtime="20190114 14:14:43.092" critical="yes" starttime="20190114 14:14:39.661"></status>
+</test>
+<doc>A test suite with tests for login.</doc>
+<status status="PASS" endtime="20190114 14:14:43.094" starttime="20190114 14:14:35.975"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test" pass="2">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
