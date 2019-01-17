@@ -7,14 +7,14 @@ Library             String
 *** Variables ***
 
 ${LOGIN URL}    http://www.saucedemo.com
-${Username}     standard_user
 ${Password}     secret_sauce
 ${BROWSER}      Chrome
 
 *** Keywords ***
 
 Open Browser To Login Page
-    Open Browser   ${LOGIN URL}     ${BROWSER}    
+    Open Browser   ${LOGIN URL}     ${BROWSER} 
+    Maximize Browser Window   
        
 Input Username
     [Arguments]  ${username}
@@ -39,7 +39,19 @@ Locked Out Error Should Be Displayed
     ${errorButton}  Set Variable    class:error-button
     Wait until element is Visible   ${errorButton}
     Element should be visible   ${errorButton}
- 
+
+login page is open
+    Open Browser   ${LOGIN URL}     ${BROWSER} 
+    Maximize Browser Window   
+       
+valid username ${username} and password are inserted
+    Input Username  ${username}
+    Input Password
+
+credentials are submitted
+    Click Button    class:login-button    
+
+
 *** Test Cases ***
 
 Valid Login
@@ -57,3 +69,10 @@ Invalid Login
     Submit Credentials 
     Locked Out Error Should Be Displayed
     [Teardown]  Close Browser
+
+BDD Example
+    Given login page is open
+    When valid username standard_user and password are inserted
+    And credentials are submitted
+    Then product page should be open
+    [Teardown]   Close Browser
