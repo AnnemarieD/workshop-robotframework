@@ -1,7 +1,6 @@
 ## Basic Assignments
-### Setup Settings 
 
-### Creating variables
+### 1. Creating variables
 Create a new robot file with settings, variables and test cases
 
 Define some variables of different types (scalar, list, dictionary)
@@ -13,7 +12,7 @@ Log the variables through one or more test cases:
 
 Use the [documentation](http://robotframework.org/robotframework/latest/libraries/BuiltIn.html) if needed.
 
-### Creating keywords and assertions
+### 2. Creating keywords and assertions
 Create a test that passes using the built-in keyword 'Should Be Equal' and the variables you created earlier.
 
 Create a test that fails using 'Should be Equal'.
@@ -24,7 +23,7 @@ Create 3 new tests using different assertion keywords.
 
 Use the [documentation](http://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Keywords) if needed.
 
-### Creating keywords with arguments
+### 3. Creating keywords with arguments
 Create a keyword that checks the 2nd value of a list. Use this keyword in a test case.
 
 Make the keyword variable by checking the nth value instead of the 2nd value (use Arguments).
@@ -32,10 +31,10 @@ Make the keyword variable by checking the nth value instead of the 2nd value (us
 Add to your test to check the 1st list item.
 Add to your test to check the 3th list item.
 
-### Behaviour Driven Development (BDD)
+### 4. Behaviour Driven Development (BDD)
 Create a test for checking the nth value of a list using given-when-then keywords.
 
-### Data Driven Tests
+### 5. Data Driven Tests
 Rewrite your test from the previous assignment to use a template setting for your entire suite (under Settings).
 
 Rewrite your test to use a template setting for a specific test case (under Test Cases).
